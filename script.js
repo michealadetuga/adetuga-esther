@@ -126,105 +126,96 @@ if (contactForm) {
 
 // ===== DOWNLOAD CV =====
 function downloadCV() {
-    // Create a text content for the CV
-    const cvContent = `ADETUGA MOJISOLA ESTHER
-Microbiologist | Environmental & Laboratory Analyst
-
-CONTACT INFORMATION
-📍 Ikorodu, Lagos State, Nigeria
-📞 +234 805 470 9064 | +234 813 451 0925
-📧 mojisolah20@gmail.com
-
-PROFESSIONAL SUMMARY
-Detail-oriented Microbiology graduate with practical experience in laboratory diagnostics, environmental monitoring, and regulatory compliance. Specialized in delivering accurate, data-driven results through structured analysis and quality control processes. Committed to public health, environmental sustainability, and scientific accuracy.
-
-CORE EXPERTISE
-✓ Microbiological Analysis & Laboratory Testing
-✓ Diagnostic Testing (Hematology, Chemistry, Microbiology)
-✓ Good Laboratory Practice (GLP) & Quality Control
-✓ Environmental Monitoring & Water Quality Analysis
-✓ Data Documentation & Scientific Reporting
-✓ Microsoft Office Suite (Excel, Word, PowerPoint)
-✓ Team Collaboration & Communication
-
-PROFESSIONAL EXPERIENCE
-
-NYSC – Nigeria Maritime Administration and Safety Agency
-February 2025 – December 2025
-
-• Supported environmental monitoring and pollution prevention initiatives
-• Assisted in biodiversity conservation programs
-• Ensured compliance with environmental regulations
-• Prepared and maintained official documentation and reports
-
-Medical Laboratory Intern – Kolak Hospital
-February 2023 – June 2023
-
-• Conducted over 3,000 diagnostic tests monthly
-• Maintained approximately 98% accuracy rate
-• Performed routine quality control procedures
-• Documented and reported laboratory findings with precision
-
-Industrial Training – Fisheries & Aquaculture
-2017 – 2018
-
-• Assisted in hatchery operations and fish health monitoring
-• Conducted water quality analysis and field data collection
-• Participated in marine conservation activities
-
-EDUCATION
-
-B.Sc. Microbiology
-Olabisi Onabanjo University
-2019 – 2023
-
-ND Fisheries & Aquaculture
-Lagos State Polytechnic
-2016 – 2018
-
-SSCE
-2010 – 2016
-
-PROJECTS & RESEARCH
-
-Water Quality Research
-Assessment of the Effect of Lime Application on Microbial Quality of Water
-• Investigated microbial reduction techniques in water systems
-• Applied laboratory testing and environmental analysis methods
-
-Environmental Awareness Campaign
-Marine Litter Awareness Program – Calabar South
-• Educated communities on environmental impact of waste dumping
-• Promoted sustainable environmental practices
-
-LANGUAGES
-✓ English – Fluent
-✓ Yoruba – Fluent
-
-PROFESSIONAL STRENGTHS
-✓ High accuracy in laboratory testing
-✓ Strong analytical and reporting skills
-✓ Excellent attention to detail
-✓ Ability to work in regulated environments
-✓ Consistent and reliable performance
-
-© 2026 ADETUGA MOJISOLA ESTHER | Science • Environment • Excellence`;
-
-    // Create a blob from the text
-    const blob = new Blob([cvContent], { type: 'text/plain' });
+    // Create HTML content for the PDF
+    const cvElement = document.createElement('div');
+    cvElement.innerHTML = `
+    <div style="font-family: Arial, sans-serif; color: #1e293b; padding: 40px;">
+        <h1 style="text-align: center; color: #0f172a; margin-bottom: 5px; font-size: 28px;">ADETUGA MOJISOLA ESTHER</h1>
+        <p style="text-align: center; color: #00d9ff; margin-bottom: 20px; font-size: 14px;">Microbiologist | Environmental & Laboratory Analyst</p>
+        
+        <div style="border-bottom: 2px solid #00d9ff; margin-bottom: 10px;"></div>
+        
+        <p style="text-align: center; margin-bottom: 20px; font-size: 11px;">
+            <strong>Ikorodu, Lagos State, Nigeria</strong> | Phone: +234 805 470 9064 | +234 813 451 0925 | Email: mojisolah20@gmail.com
+        </p>
+        
+        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">PROFESSIONAL SUMMARY</h2>
+        <p style="font-size: 11px; line-height: 1.6; margin-bottom: 15px;">
+            Detail-oriented Microbiology graduate with hands-on experience in laboratory diagnostics, environmental monitoring, and regulatory compliance. Skilled in data analysis, quality control, and accurate reporting. Known for strong organizational skills and commitment to delivering reliable results.
+        </p>
+        
+        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">CORE SKILLS</h2>
+        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 15px;">
+            <li>Microbiological Analysis & Laboratory Testing</li>
+            <li>Diagnostic Testing (Hematology, Chemistry, Microbiology)</li>
+            <li>Good Laboratory Practice (GLP) & Quality Control</li>
+            <li>Environmental Monitoring & Water Quality Analysis</li>
+            <li>Data Documentation & Reporting</li>
+            <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+            <li>Teamwork & Communication</li>
+        </ul>
+        
+        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">WORK EXPERIENCE</h2>
+        
+        <h3 style="font-size: 12px; color: #0f172a; margin-top: 10px; margin-bottom: 2px;">NYSC – Nigeria Maritime Administration and Safety Agency</h3>
+        <p style="font-size: 10px; color: #10b981; margin-bottom: 5px;"><em>Feb 2025 – Dec 2025</em></p>
+        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 10px;">
+            <li>Supported pollution prevention and environmental monitoring initiatives</li>
+            <li>Assisted in biodiversity conservation and sustainable resource programs</li>
+            <li>Contributed to regulatory compliance and documentation</li>
+        </ul>
+        
+        <h3 style="font-size: 12px; color: #0f172a; margin-top: 10px; margin-bottom: 2px;">Medical Laboratory Intern – Kolak Hospital</h3>
+        <p style="font-size: 10px; color: #10b981; margin-bottom: 5px;"><em>Feb 2023 – Jun 2023</em></p>
+        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 10px;">
+            <li>Conducted 3,000+ diagnostic tests monthly across hematology, chemistry, and microbiology</li>
+            <li>Maintained ~98% accuracy rate in test results</li>
+            <li>Performed quality control procedures ensuring reliability</li>
+            <li>Documented and reported laboratory findings accurately</li>
+        </ul>
+        
+        <h3 style="font-size: 12px; color: #0f172a; margin-top: 10px; margin-bottom: 2px;">Industrial Training – Fisheries & Aquaculture</h3>
+        <p style="font-size: 10px; color: #10b981; margin-bottom: 5px;"><em>2017 – 2018</em></p>
+        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 10px;">
+            <li>Assisted in hatchery operations and fish health monitoring</li>
+            <li>Conducted water quality assessments and field data collection</li>
+            <li>Participated in marine conservation activities</li>
+        </ul>
+        
+        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">EDUCATION</h2>
+        <p style="font-size: 11px; margin-bottom: 5px;"><strong>B.Sc. Microbiology</strong> – Olabisi Onabanjo University (2019 – 2023)</p>
+        <p style="font-size: 11px; margin-bottom: 5px;"><strong>ND, Fisheries & Aquaculture</strong> – Lagos State Polytechnic (2016 – 2018)</p>
+        <p style="font-size: 11px; margin-bottom: 15px;"><strong>SSCE</strong> (2010 – 2016)</p>
+        
+        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">PROJECTS</h2>
+        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 15px;">
+            <li>Assessment of the Effect of Lime Application on Microbial Quality of Water</li>
+            <li>Community awareness program on marine litter dumping (Calabar South)</li>
+        </ul>
+        
+        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">LANGUAGES</h2>
+        <p style="font-size: 11px; margin-bottom: 5px;">English (Fluent) | Yoruba (Fluent)</p>
+        
+        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">REFERENCES</h2>
+        <p style="font-size: 11px;">Available upon request</p>
+    </div>
+    `;
     
-    // Create a link element and trigger download
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'ADETUGA_MOJISOLA_ESTHER_CV.txt';
+    // PDF options
+    const options = {
+        margin: 10,
+        filename: 'adetuga_mojisola_cv.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+    };
     
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Generate and download PDF
+    html2pdf().set(options).from(cvElement).save();
     
     // Show success notification
     const notification = document.createElement('div');
-    notification.textContent = 'CV downloaded successfully!';
+    notification.textContent = '✅ PDF downloaded: adetuga_mojisola_cv.pdf';
     notification.style.cssText = `
         position: fixed;
         top: 20px;
