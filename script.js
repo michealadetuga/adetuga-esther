@@ -126,96 +126,17 @@ if (contactForm) {
 
 // ===== DOWNLOAD CV =====
 function downloadCV() {
-    // Create HTML content for the PDF
-    const cvElement = document.createElement('div');
-    cvElement.innerHTML = `
-    <div style="font-family: Arial, sans-serif; color: #1e293b; padding: 40px;">
-        <h1 style="text-align: center; color: #0f172a; margin-bottom: 5px; font-size: 28px;">ADETUGA MOJISOLA ESTHER</h1>
-        <p style="text-align: center; color: #00d9ff; margin-bottom: 20px; font-size: 14px;">Microbiologist | Environmental & Laboratory Analyst</p>
-        
-        <div style="border-bottom: 2px solid #00d9ff; margin-bottom: 10px;"></div>
-        
-        <p style="text-align: center; margin-bottom: 20px; font-size: 11px;">
-            <strong>Ikorodu, Lagos State, Nigeria</strong> | Phone: +234 805 470 9064 | +234 813 451 0925 | Email: mojisolah20@gmail.com
-        </p>
-        
-        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">PROFESSIONAL SUMMARY</h2>
-        <p style="font-size: 11px; line-height: 1.6; margin-bottom: 15px;">
-            Detail-oriented Microbiology graduate with hands-on experience in laboratory diagnostics, environmental monitoring, and regulatory compliance. Skilled in data analysis, quality control, and accurate reporting. Known for strong organizational skills and commitment to delivering reliable results.
-        </p>
-        
-        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">CORE SKILLS</h2>
-        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 15px;">
-            <li>Microbiological Analysis & Laboratory Testing</li>
-            <li>Diagnostic Testing (Hematology, Chemistry, Microbiology)</li>
-            <li>Good Laboratory Practice (GLP) & Quality Control</li>
-            <li>Environmental Monitoring & Water Quality Analysis</li>
-            <li>Data Documentation & Reporting</li>
-            <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
-            <li>Teamwork & Communication</li>
-        </ul>
-        
-        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">WORK EXPERIENCE</h2>
-        
-        <h3 style="font-size: 12px; color: #0f172a; margin-top: 10px; margin-bottom: 2px;">NYSC – Nigeria Maritime Administration and Safety Agency</h3>
-        <p style="font-size: 10px; color: #10b981; margin-bottom: 5px;"><em>Feb 2025 – Dec 2025</em></p>
-        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 10px;">
-            <li>Supported pollution prevention and environmental monitoring initiatives</li>
-            <li>Assisted in biodiversity conservation and sustainable resource programs</li>
-            <li>Contributed to regulatory compliance and documentation</li>
-        </ul>
-        
-        <h3 style="font-size: 12px; color: #0f172a; margin-top: 10px; margin-bottom: 2px;">Medical Laboratory Intern – Kolak Hospital</h3>
-        <p style="font-size: 10px; color: #10b981; margin-bottom: 5px;"><em>Feb 2023 – Jun 2023</em></p>
-        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 10px;">
-            <li>Conducted 3,000+ diagnostic tests monthly across hematology, chemistry, and microbiology</li>
-            <li>Maintained ~98% accuracy rate in test results</li>
-            <li>Performed quality control procedures ensuring reliability</li>
-            <li>Documented and reported laboratory findings accurately</li>
-        </ul>
-        
-        <h3 style="font-size: 12px; color: #0f172a; margin-top: 10px; margin-bottom: 2px;">Industrial Training – Fisheries & Aquaculture</h3>
-        <p style="font-size: 10px; color: #10b981; margin-bottom: 5px;"><em>2017 – 2018</em></p>
-        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 10px;">
-            <li>Assisted in hatchery operations and fish health monitoring</li>
-            <li>Conducted water quality assessments and field data collection</li>
-            <li>Participated in marine conservation activities</li>
-        </ul>
-        
-        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">EDUCATION</h2>
-        <p style="font-size: 11px; margin-bottom: 5px;"><strong>B.Sc. Microbiology</strong> – Olabisi Onabanjo University (2019 – 2023)</p>
-        <p style="font-size: 11px; margin-bottom: 5px;"><strong>ND, Fisheries & Aquaculture</strong> – Lagos State Polytechnic (2016 – 2018)</p>
-        <p style="font-size: 11px; margin-bottom: 15px;"><strong>SSCE</strong> (2010 – 2016)</p>
-        
-        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">PROJECTS</h2>
-        <ul style="font-size: 11px; line-height: 1.6; margin-left: 20px; margin-bottom: 15px;">
-            <li>Assessment of the Effect of Lime Application on Microbial Quality of Water</li>
-            <li>Community awareness program on marine litter dumping (Calabar South)</li>
-        </ul>
-        
-        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">LANGUAGES</h2>
-        <p style="font-size: 11px; margin-bottom: 5px;">English (Fluent) | Yoruba (Fluent)</p>
-        
-        <h2 style="color: #00d9ff; font-size: 14px; border-bottom: 1px solid #00d9ff; padding-bottom: 5px; margin-top: 15px;">REFERENCES</h2>
-        <p style="font-size: 11px;">Available upon request</p>
-    </div>
-    `;
-    
-    // PDF options
-    const options = {
-        margin: 10,
-        filename: 'adetuga_mojisola_cv.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-    };
-    
-    // Generate and download PDF
-    html2pdf().set(options).from(cvElement).save();
+    // Create a link element to download the actual PDF file
+    const link = document.createElement('a');
+    link.href = 'Adetuga_Mojisola_CV.pdf';
+    link.download = 'Adetuga_Mojisola_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     
     // Show success notification
     const notification = document.createElement('div');
-    notification.textContent = '✅ PDF downloaded: adetuga_mojisola_cv.pdf';
+    notification.textContent = '✅ PDF downloaded: Adetuga_Mojisola_CV.pdf';
     notification.style.cssText = `
         position: fixed;
         top: 20px;
